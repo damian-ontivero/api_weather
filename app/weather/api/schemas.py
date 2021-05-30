@@ -1,0 +1,17 @@
+'''
+Esquemas para serializar los modelos (JSON)
+'''
+
+from marshmallow import fields
+
+from app.ext import ma
+
+class WeatherSchema(ma.Schema):
+    id = fields.Integer(dump_only=True) # Solo se tiene en cuenta en la serialización pero no en la carga
+    country = fields.String()
+    city = fields.String()
+    date = fields.DateTime()
+    temp = fields.String()
+    temp_min = fields.String()
+    temp_max = fields.String()
+    desc = fields.String()
