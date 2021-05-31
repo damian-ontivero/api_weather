@@ -3,6 +3,7 @@ Configuración de la app
 '''
 
 class Config:
+    API_URL = 'http://api.openweathermap.org/data/2.5/weather'
     API_KEY = 'a4c3297ec7d40ebb82b51c6f3ac08b55'
 
     PROPAGATE_EXCEPTIONS = True

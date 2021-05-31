@@ -25,9 +25,8 @@ class WeatherResource(Resource):
 
     def get(self, city):
         def load_weather(city):
-            url = 'http://api.openweathermap.org/data/2.5/weather'
             args = {'q': city, 'appid': Config.API_KEY, 'units': 'metric', 'lang': 'es'}
-            response = requests.get(url, params=args)
+            response = requests.get(Config.API_URL, params=args)
             
             if response.status_code == 200:
                 weather_json = response.json()
