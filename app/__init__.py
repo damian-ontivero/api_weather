@@ -1,5 +1,5 @@
 '''
-Configuración de la aplicación
+App configuration
 '''
 
 from flask import Flask, jsonify
@@ -15,21 +15,21 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    # Inicializa las extensiones
+    # Extension init
     db.init_app(app)
     ma.init_app(app)
     migrate.init_app(app, db)
 
-    # Captura todos los errores 404
+    # Capture all 404 errors
     Api(app, catch_all_404s=True)
 
-    # Deshabilita el modo estricto de acabado de una URL con /
+    # Disable strict slashes mode
     app.url_map.strict_slashes = False
     
-    # Registra los blueprints
+    # Blueprint register
     app.register_blueprint(weather_bp)
 
-    # Registra manejadores de errores personalizados
+    # Error handler register
     register_error_handlers(app)
 
     return app

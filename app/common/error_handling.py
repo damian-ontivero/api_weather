@@ -1,5 +1,5 @@
 '''
-Utilidades para el manejo de errores
+Error handler
 '''
 
 class AppErrorBaseClass(Exception):

@@ -22,7 +22,12 @@ weather_schema = WeatherSchema()
 api = Api(weather_bp)
 
 def load_weather_in_db(city):
-    args = {'q': city, 'appid': Config.API_KEY, 'units': 'metric', 'lang': 'es'}
+    args = {
+        'q': city,
+        'appid': Config.API_KEY,
+        'units': 'metric',
+        'lang': 'es'
+        }
 
     response = requests.get(Config.API_URL, params=args)
             
@@ -37,7 +42,15 @@ def load_weather_in_db(city):
         temp_max = weather_json['main']['temp_max']
         desc = weather_json['weather'][0]['description']
 
-        weather = Weather(country=country, city=city, date=date, temp=int(temp), temp_min=int(temp_min), temp_max=int(temp_max), desc=desc.capitalize())
+        weather = Weather(
+                country=country,
+                city=city,
+                date=date,
+                temp=int(temp),
+                temp_min=int(temp_min),
+                temp_max=int(temp_max),
+                desc=desc.capitalize()
+                )
 
         weather.save()
 
