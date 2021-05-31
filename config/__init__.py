@@ -16,4 +16,3 @@ class Config:
     JSON_SORT_KEYS = False
     JSON_AS_ASCII = False
     ERROR_404_HELP = False
-    

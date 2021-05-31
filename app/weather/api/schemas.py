@@ -1,5 +1,5 @@
 '''
-Esquemas para serializar los modelos (JSON)
+Schemas for serializing the models in JSON
 '''
 
 from marshmallow import fields

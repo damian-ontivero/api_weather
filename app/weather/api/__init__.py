@@ -1,3 +1,0 @@
-'''
-Configuración de la api
-'''

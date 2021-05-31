@@ -1,5 +1,5 @@
 '''
-Modelo de la tabla de la base de datos
+Table model
 '''
 
 from app.db import db, BaseModel

@@ -1,5 +1,5 @@
 '''
-Crea instancia de la app
+App instance
 '''
 
 from app import create_app
