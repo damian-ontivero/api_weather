@@ -60,10 +60,9 @@ class WeatherResource(Resource):
     def get(self, city):
         if load_weather_in_db(city):
             weather = Weather.get_by_city(city.capitalize())
-
-            if weather is None:
-                raise ObjectNotFound('The city {} does not exist in the database.'.format(city.capitalize()))
             
             return weather_schema.dump(weather)
+        else:
+            raise ObjectNotFound('The city {} does not exist in the database.'.format(city.capitalize()))
 
 api.add_resource(WeatherResource, '/api/v1.0/weather/<string:city>', endpoint='weather_resource')
