@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  weather:
+    image: api-weather:1.0
+    container_name: api-weather
+    restart: always
+    ports:
+      - '5000:5000/tcp'
+    volumes:
+      - ./app/weather.db:/opt/api-weather/app/weather.db
