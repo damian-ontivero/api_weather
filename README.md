@@ -15,6 +15,12 @@ Note: You must be in the Dockerfile dir
 #### Run container:
     docker run --name api-weather --publish 5000:5000 api-weather:1.0
 
+### You can use the docker-compose as well:
+    docker-compose up -d
+
+    docker-compose -f docker-compose.yml up -d
+Note: You must be in the docker-compose.yml dir
+
 ### Example:
 #### Request:
     curl localhost:5000/api/v1.0/weather/barcelona
