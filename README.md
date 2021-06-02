@@ -12,14 +12,14 @@ Source weather 'https://openweathermap.org'
     docker build -t api-weather:1.0 .
 Note: You must be in the Dockerfile dir
 
-#### Run container:
+#### Run container with docker run:
     docker run --name api-weather --publish 5000:5000 api-weather:1.0
 
-### You can use the docker-compose as well:
+#### Run container with docker-compose:
     docker-compose up -d
 
     docker-compose -f docker-compose.yml up -d
-Note: You must be in the docker-compose.yml dir
+Note: You must have docker-compose installed and be in the docker-compose.yml dir
 
 ### Example:
 #### Request:
