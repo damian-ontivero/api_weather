@@ -1,6 +1,6 @@
-'''
+"""
 App configuration
-'''
+"""
 
 from flask import Flask, jsonify
 from flask_restful import Api
@@ -10,6 +10,7 @@ from app.common.error_handling import AppErrorBaseClass, ObjectNotFound
 from config import Config
 from app.weather.api.resources import weather_bp
 from .ext import ma, migrate
+
 
 def create_app():
     app = Flask(__name__)
@@ -25,7 +26,7 @@ def create_app():
 
     # Disable strict slashes mode
     app.url_map.strict_slashes = False
-    
+
     # Blueprint register
     app.register_blueprint(weather_bp)
 
@@ -55,7 +56,7 @@ def register_error_handlers(app):
     @app.errorhandler(AppErrorBaseClass)
     def handle_app_base_error(e):
         return jsonify({'message': str(e)}), 500
-        
+
     @app.errorhandler(ObjectNotFound)
     def handle_object_not_found_error(e):
         return jsonify({'message': str(e)}), 404

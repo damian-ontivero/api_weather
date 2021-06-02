@@ -1,6 +1,7 @@
-'''
-Configuración de la app
-'''
+"""
+App Configuration
+"""
+
 
 class Config:
     API_URL = 'http://api.openweathermap.org/data/2.5/weather'
